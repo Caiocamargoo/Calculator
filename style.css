@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Cairo', sans-serif;
+}
+
+:root {
+    --bg-body: url(./img/dark.png);
+    --bg--container: #ffffff0d;
+    --txt-value: #fff;
+    --txt-span: #fff;
+}
+
+.dark-mode:root {
+    --bg-body: url(./img/light.png);
+    --bg--container: rgba( 255, 255, 255, 0 );;
+    --txt-value: #000000;
+    --txt-span: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: var(--bg-body);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center ;
+    height: 100vh;
+}
+
+
+
+.container {
+    background: var(--bg--container);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow:
+    0px 14.9px 11px rgba(0, 0, 0, 0.12),
+    0px 29.8px 25.5px rgba(0, 0, 0, 0.113),
+    0px 44.9px 45.9px rgba(0, 0, 0, 0.104),
+    0px 60.8px 76.1px rgba(0, 0, 0, 0.091),
+    0px 79.5px 125.4px rgba(0, 0, 0, 0.045),
+    0px 109.4px 219.1px rgba(0, 0, 0, 0.024),
+    0px 270px 474px rgba(0, 0, 0, 0.011);
+    padding: 15px;
+}
+
+.container .calculator {
+    display: grid;
+}
+
+.container .calculator .value {
+    grid-column: span 4;
+    height: 140px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: var(--txt-value);
+}
+.container .calculator span {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    color: var(--txt-span);
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 30px;
+    user-select: none;
+    border-radius: 25px;
+    box-shadow: 4px 5px 8px 0px #00000387;
+}
+
+.container .calculator .zero {
+    grid-column: span 2;
+    width: 150px;
+}
+
+.container .calculator .changeColor {
+    background: orange;
+}
+
+.container .calculator .color {
+    background: gray;
+}
+
+.container .calculator span:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode Only ;) */
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: .5em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0e0e0e;
+    transition: .4s;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .slider p {
+    margin-left: 44px;
+    font-size: 20px;
+    color: var(--txt-value);
+  }
+  
+  .slider .circle {
+    background-color: #212121;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    transition: .4s;
+  }
+  
+  .slider .circle::before {
+    position: absolute;
+    content: "";
+    height: 2.3em;
+    width: 2.3em;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(182, 182, 182);
+    transition: .4s;
+  }
+  
+  .slider .circle::after {
+    content: '';
+    background-color: #212121;
+    height: 1.7em;
+    width: 1.7em;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .4s;
+  }
+  
+  input:checked + .slider .circle {
+    transform: translateX(2em);
+    transition: .4s;
+  }
+  
+  input:checked + .slider .circle::before {
+    background-color: #e1e1e1;
+    transition: .4s;
+  }
+  
+  input:checked + .slider .circle::after {
+    width: 0;
+    height: 0;
+    transition: .4s;
+  }
